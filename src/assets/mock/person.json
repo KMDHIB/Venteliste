@@ -1,0 +1,13 @@
+{
+  "PersonId": 952923,
+  "FirstName": "Gabriel",
+  "Surname": "Gokkejern",
+  "Email": null,
+  "Phone": "",
+  "WorkPhone": "",
+  "Address": "Vestskoven 10",
+  "PostalCode": 9000,
+  "HasCustody": false,
+  "Notify": true,
+  "HasValidCpr": false
+}

@@ -1,0 +1,55 @@
+{
+  "Id": 0,
+  "Name": "William Rystespyd",
+  "BirthDay": "2009-10-08T00:00:00",
+  "SchoolStart": "2024/2025",
+  "SchoolClass": 9,
+  "NumberOfSchoolYears": 0,
+  "Comments": null,
+  "CurrentSchool": null,
+  "Files": [],
+  "Kindergarten": { "KindergartenYear": null, "KindergartenMonth": null },
+  "Siblings": [],
+  "Status": "IkkeAngivet",
+  "LineCourse": null,
+  "SpecialFields": [
+    "Samtykkeerklæring",
+    "Må barnet fotograferes?",
+    "Tysk i 7. kl"
+  ],
+  "ParentOne": {
+    "Name": "Gabriel Gokkejern",
+    "Email": null,
+    "Mobile": "",
+    "WorkPhone": "",
+    "Address": "Vestskoven 10",
+    "PostalCode": 9000,
+    "HasCustody": true,
+    "Notify": true,
+    "HasValidCpr": true
+  },
+  "ParentTwo": {
+    "Name": null,
+    "Email": null,
+    "Mobile": null,
+    "WorkPhone": null,
+    "Address": null,
+    "PostalCode": 0,
+    "HasCustody": false,
+    "Notify": false,
+    "HasValidCpr": false
+  },
+  "PaymentDue": 1.0,
+  "OtherContact": {
+    "Name": null,
+    "Email": null,
+    "Mobile": null,
+    "WorkPhone": null,
+    "Address": null,
+    "PostalCode": 0,
+    "HasCustody": false,
+    "Notify": false,
+    "HasValidCpr": false
+  },
+  "IsLocked": false
+}

@@ -1,0 +1,11 @@
+{
+  "Name": "Test Skole",
+  "Address": "Lauritzens Plads 1",
+  "Zipcode": "9000",
+  "City": "Aalborg",
+  "Phone": "72287030",
+  "Email": "nomail@uvdata.net",
+  "ImageBase64": "/src/assets/uvdata.svg",
+  "Styles": "",
+  "WelcomeText": ""
+}

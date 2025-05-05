@@ -1,27 +1,21 @@
 {
-  "name": "angular-starter",
+  "name": "venteliste2-starter",
   "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "start": "vite --port 9669 --open"
   },
   "dependencies": {
-    "@angular/animations": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0",
-    "@angular/router": "^19.0.0",
-    "rxjs": "^7.8.1",
-    "tslib": "^2.5.0",
-    "zone.js": "~0.15.0"
+    "vue": "^3.5.13",
+    "sass": "^1.87.0",
+    "bootstrap": "^5.3.5"
   },
   "devDependencies": {
-    "@angular/build": "^19.0.0",
-    "@angular/cli": "^19.0.0",
-    "@angular/compiler-cli": "^19.0.0",
-    "typescript": "^5.6.3"
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.3.4"
   }
 }
