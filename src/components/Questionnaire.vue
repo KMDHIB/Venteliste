@@ -1,32 +1,25 @@
-<template>
-  <div>
-    <Question v-for="question in questions" :key="question.id" :question="question" />
-    <button @click="submit">Submit</button>
-    {{questions }}
-  </div>
-</template>
-
-<script>
-import { questions } from '../data/questions';
+<script lang="ts" setup>
+import { ref, defineProps } from 'vue'
 import Question from './Question.vue';
 
-export default {
-  name: 'Questionnaire',
-  components: {
-    Question,
-  },
-  data() {
-    return {
-      questions,
-    };
-  },
-  methods: {
-    submit() {
-      console.log('Submitted answers:', this.questions);
-    },
-  },
-};
+interface Props {
+  questions: any[]
+}
+
+const props = defineProps<Props>();
+
+const submit = () => {
+
+}
+
 </script>
+
+<template>
+  <div>
+    <Question v-for="question in props.questions" :key="question.id" :question="question" />
+    <button @click="submit">Submit</button>
+  </div>
+</template>
 
 <style scoped>
 .question {

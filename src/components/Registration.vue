@@ -1,20 +1,38 @@
-<script setup>
-import { ref, defineProps } from 'vue'
+<script lang="ts" setup>
+import { ref, defineProps, watch, onMounted } from 'vue'
 import Heading from './Heading.vue';
 import Wizard from './Wizard.vue';
 import Selector from './Selector.vue';
 import SchoolInfo from './SchoolInfo.vue';
 import ContactInfo from './ContactInfo.vue';
 import Finalize from './Finalize.vue';
+import Questionnaire from './Questionnaire.vue';
+import { Child } from '../interfaces/child.ts';
+import { School } from '../interfaces/school.ts';
+import { PostalCode } from '../interfaces/postalCode.ts';
+import { Registration } from '../interfaces/registration.ts';
 
-defineProps({
-  children: Object,
+interface Props {
+  children: Child[],
   person: Object,
-  postalCodes: Object,
-  registration: Object,
-  school: Object,
-  siblings: Object
-})
+  postalCodes: PostalCode[],
+  registration: Registration,
+  school: School,
+  siblings: Object,
+  questionnaire: any
+}
+
+const props = defineProps<Props>();
+
+// defineProps({
+//   children: Object,
+//   person: Object,
+//   postalCodes: Object,
+//   registration: Object,
+//   school: Object,
+//   siblings: Object,
+//   questionnaire: Object
+// })
 
 const emit = defineEmits(['done', 'loggingOut'])
 
@@ -52,22 +70,49 @@ const changeStep = (adder) => {
   if (adder < 0) {
     if (step.value + adder <= 1) {
       step.value = 1;
-      setTimeout(window.scrollTo(0, 0), 400);
+      setTimeout(() => window.scrollTo(0, 0), 400);
     } else {
       step.value += adder;
-      setTimeout(window.scrollTo(0, 0), 400);
+      setTimeout(() => window.scrollTo(0, 0), 400);
     }
   } else {
-    if (step.value == 4) {
+    if (step.value == steps.value.length) {
       wereDone();
       step.value = 1;
     }
-    else if (validateStep()) {
-      step.value += adder;
-      setTimeout(window.scrollTo(0, 0), 400);
+    else if (validateStep(step.value + adder)) {
+      /* Handle special case for optional questionnaire */
+      if (step.value == 2 && !(props.questionnaire.length > 0) && adder === 1) {
+        step.value = 4;
+      }
+      else {
+        step.value += adder;
+      }
+      
+      setTimeout(() => window.scrollTo(0, 0), 400);
     }
   }
 };
+
+onMounted(() => {
+  if (props.questionnaire.length > 0) {
+    steps.value.splice(2, 0, "Spørgeskema");
+  } 
+  
+  // setTimeout(() => {
+  //   console.log(questionnaire.value);
+  // }, 400);
+ 
+});
+
+// watch(
+//   () => questionnaire.value,  
+//   (newVal) => {
+//     if (newVal) {
+//       console.log(newVal);
+//     }
+//   }
+// );
 
 </script>
 
@@ -82,7 +127,10 @@ const changeStep = (adder) => {
       <SchoolInfo :registration="registration" :school="school" :siblings="siblings"
         :storedRegistration="registration" />
     </div>
-    <div v-show="step === 3">
+    <div v-show="step === 3 && questionnaire">
+      <Questionnaire :questions="questionnaire" />
+    </div>
+    <div v-show="step === 3 && !questionnaire">
       <ContactInfo :registration="registration" :postalCodes="postalCodes" :gprLink="school?.GDPRConditionLink" />
     </div>
     <div v-show="step === 4">

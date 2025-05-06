@@ -1,9 +1,10 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import Spinner from './Spinner.vue';
+import * as School from '../interfaces/school.ts';
 
 const props = defineProps({
-  school: Object
+  school: School
 });
 
 const emit = defineEmits(['loggingIn'])

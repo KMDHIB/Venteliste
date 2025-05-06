@@ -66,7 +66,7 @@ onMounted(async () => {
   <spinner v-if="loading" text="Henter data..."></spinner>
   <LandingPage v-if="!loading && !loggedIn && !done" :school="school" @loggingIn="handleLogin" />
   <Registration v-if="!loading && loggedIn && !done" :children="children" :person="person" :postalCodes="postalCodes"
-    :registration="registration" :school="school" :siblings="siblings" @loggingOut="handleLogin" @done="handleDone" />
+    :registration="registration" :school="school" :siblings="siblings" :questionnaire="questionnaire" @loggingOut="handleLogin" @done="handleDone" />
   <Receipt v-if="!loading && loggedIn && done" :registration="registration" :school="school" @loggingOut="handleLogin" />
 </template>
 

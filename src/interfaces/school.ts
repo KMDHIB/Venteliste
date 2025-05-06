@@ -1,0 +1,31 @@
+export interface School {
+    PaymentConditionLink: string;
+    GDPRConditionLink: string;
+    UseEnrollmentFee: boolean;
+    EnrollmentFee: number;
+    NoFeeForSiblings: boolean;
+    NoFeeForSiblingsOnWaitList: boolean;
+    SchoolStart: string[];
+    SchoolClasses: number[];
+    MenuVisibleFromClass: number;
+    KindergartenText: string;
+    SpecialFieldText: string;
+    IsPrivateOrFreeSchool: boolean;
+    ReceiptFreeText: string;
+    LineCourses: string[];
+    SpecialFields: {
+        Name: string;
+        Selected: boolean;
+    }[];
+    ClosedClasses: any[];
+    ExtraInfo: string;
+    Name: string;
+    Address: string;
+    Zipcode: string;
+    City: string;
+    Phone: string;
+    Email: string;
+    ImageBase64: string;
+    Styles: string;
+    WelcomeText: string;
+}
