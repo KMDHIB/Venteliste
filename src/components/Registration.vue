@@ -127,13 +127,13 @@ onMounted(() => {
       <SchoolInfo :registration="registration" :school="school" :siblings="siblings"
         :storedRegistration="registration" />
     </div>
-    <div v-show="step === 3 && questionnaire">
+    <div v-show="step === 3">
       <Questionnaire :questions="questionnaire" />
     </div>
-    <div v-show="step === 3 && !questionnaire">
+    <div v-show="step === 4">
       <ContactInfo :registration="registration" :postalCodes="postalCodes" :gprLink="school?.GDPRConditionLink" />
     </div>
-    <div v-show="step === 4">
+    <div v-show="step === 5">
       <Finalize :registration="registration" :school="school" />
     </div>
     <div class="row mb-3">
@@ -153,7 +153,6 @@ onMounted(() => {
             <span v-if="step === 4 && !(school?.UseEnrollmentFee && registration?.PaymentDue)">Godkend</span>
             <span v-if="loadingNextStep">
               &nbsp;
-              <i class="fa fa-spinner fa-pulse"></i>
             </span>
           </button>
         </span>

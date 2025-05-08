@@ -4,9 +4,10 @@ const headers = {
   "Accept": "*/*",
   "Cache-Control": "no-cache"
 };
+const cacheBuster = new Date().getTime(); // Cache buster to prevent caching issues
 
 export async function getChildren() {
-  const response = await fetch(`${baseUrl}/children.json`, {
+  const response = await fetch(`${baseUrl}/children.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -19,7 +20,7 @@ export async function getChildren() {
 }
 
 export async function getSchool() {
-  const response = await fetch(`${baseUrl}/school.json`, {
+  const response = await fetch(`${baseUrl}/school.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -32,7 +33,7 @@ export async function getSchool() {
 }
 
 export async function getSchoolSummary() {
-  const response = await fetch(`${baseUrl}/schoolSummary.json`, {
+  const response = await fetch(`${baseUrl}/schoolSummary.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -45,7 +46,7 @@ export async function getSchoolSummary() {
 }
 
 export async function getPerson() {
-  const response = await fetch(`${baseUrl}/person.json`, {
+  const response = await fetch(`${baseUrl}/person.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -58,7 +59,7 @@ export async function getPerson() {
 }
 
 export async function getPostalCodes() {
-  const response = await fetch(`${baseUrl}/postalCodes.json`, {
+  const response = await fetch(`${baseUrl}/postalCodes.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -71,7 +72,7 @@ export async function getPostalCodes() {
 }
 
 export async function getRegistration() {
-  const response = await fetch(`${baseUrl}/registration.json`, {
+  const response = await fetch(`${baseUrl}/registration.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -84,7 +85,7 @@ export async function getRegistration() {
 }
 
 export async function getSiblings() {
-  const response = await fetch(`${baseUrl}/siblings.json`, {
+  const response = await fetch(`${baseUrl}/siblings.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -97,7 +98,7 @@ export async function getSiblings() {
 }
 
 export async function getQuestionnaire() {
-  const response = await fetch(`${baseUrl}/questions.json`, {
+  const response = await fetch(`${baseUrl}/questions.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });

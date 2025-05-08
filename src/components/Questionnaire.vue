@@ -8,16 +8,16 @@ interface Props {
 
 const props = defineProps<Props>();
 
-const submit = () => {
-
-}
-
 </script>
 
 <template>
-  <div>
-    <Question v-for="question in props.questions" :key="question.id" :question="question" />
-    <button @click="submit">Submit</button>
+  <div class="row well">
+    <h2>Spørgeskema:</h2>
+    <div class="row innerRow">
+      <div class="col-xs-12">
+        <Question v-for="question in props.questions" :key="question.id" :question="question" />
+      </div>
+    </div>
   </div>
 </template>
 

@@ -1,138 +1,108 @@
 [
-    {
-      "id": 1,
-      "type": "text",
-      "question": "Navn",
-      "answer": ""
-    },
-    {
-      "id": 2,
-      "type": "number",
-      "question": "Alder",
-      "answer": null
-    },
-    {
-      "id": 2,
-      "type": "number",
-      "question": "Startår",
-      "answer": null,
-      "conditional": {
-        "2024": [
-          {
-            "id": 5,
-            "type": "boolean",
-            "question": "Har du været til rundvisning?",
-            "answer": ""
-          }
-        ],
-        "2025": [
-          {
-            "id": 5,
-            "type": "boolean",
-            "question": "Kommer du til rundvisning i marts 2024?",
-            "answer": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": 3,
-      "type": "boolean",
-      "question": "Har du en hest?",
-      "answer": null,
-      "conditional": {
-        "true": [
-          {
-            "id": 5,
-            "type": "boolean",
-            "question": "Spiser den gulerødder?",
-            "answer": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": 6,
-      "type": "checkbox",
-      "question": "Which sports do you play?",
-      "options": ["Football", "Basketball", "Tennis"],
-      "answer": []
-    },
-    {
-      "id": 7,
-      "type": "select",
-      "question": "What is your favorite fruit?",
-      "options": ["Apple", "Banana", "Orange", "Strawberry"],
-      "answer": "",
-      "conditional": {
-        "Apple": [
-          {
-            "id": 8,
-            "type": "text",
-            "question": "Why do you like apples?",
-            "answer": ""
-          }
-        ]
-      }
-    },
-    {
-      "id": 9,
-      "type": "text",
-      "question": "What is your favorite color?",
-      "answer": ""
-    },
-    {
-      "id": 10,
-      "type": "text",
-      "question": "What is your favorite animal?",
-      "answer": ""
-    },
-    {
-      "id": 11,
-      "type": "text",
-      "question": "What is your favorite movie?",
-      "answer": ""
-    },
-    {
-      "id": 12,
-      "type": "text",
-      "question": "What is your favorite book?",
-      "answer": ""
-    },
-    {
-      "id": 13,
-      "type": "text",
-      "question": "What is your favorite food?",
-      "answer": ""
-    },
-    {
-      "id": 14,
-      "type": "text",
-      "question": "What is your favorite hobby?",
-      "answer": ""
-    },
-    {
-      "id": 15,
-      "type": "text",
-      "question": "What is your favorite place?",
-      "answer": ""
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What is your favorite season?",
-      "answer": ""
-    },
-    {
-      "id": 17,
-      "type": "text",
-      "question": "What is your favorite holiday?",
-      "answer": ""
-    },
-    {
-      "id": 18,
-      "type": "text",
-      "question": "What is your favorite sport?",
-      "answer": ""
+  {
+    "id": 1,
+    "type": "select",
+    "question": "Hvilket klassetrin ønsker du?",
+    "options": ["8. kl.", "9. kl.", "10. kl."],
+    "answer": "",
+    "conditional": {
+      "10. kl.": [
+        {
+          "id": 2,
+          "type": "boolean",
+          "question": "Ønsker du et karakter- og eksamensfrit skoleår?",
+          "answer": ""
+        }
+      ]
     }
-  ]
+  },
+  {
+    "id": 3,
+    "type": "number",
+    "question": "Startår",
+    "answer": null,
+    "conditional": {
+      "2025": [
+        {
+          "id": 4,
+          "type": "boolean",
+          "question": "Har du været til rundvisning?",
+          "answer": ""
+        }
+      ],
+      "2026": [
+        {
+          "id": 6,
+          "type": "boolean",
+          "question": "Kommer du til rundvisning i september 2025?",
+          "answer": ""
+        }
+      ],
+      "2027": [
+        {
+          "id": 7,
+          "type": "boolean",
+          "question": "Kommer du til rundvisning i september 2026?",
+          "answer": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "type": "checkbox",
+    "question": "Hvilken linie ønsker du?",
+    "options": ["Fodbold", "Heste", "Gaming"],
+    "answer": [],
+    "conditional": {
+      "Fodbold": [
+        {
+          "id": 9,
+          "type": "select",
+          "question": "Hvilket position spille  du?",
+          "options": [
+            "Målmand",
+            "Sweeper",
+            "Libero",
+            "Forsvarsspiller",
+            "Full Back",
+            "Half Back",
+            "Midtbanespiller",
+            "Wing",
+            "Secondary Striker",
+            "Angriber"
+          ],
+          "answer": "",
+          "conditional": {
+            "Angriber": [
+              {
+                "id": 10,
+                "type": "number",
+                "question": "Hvor mange mål scorede du i sidste sæson?",
+                "answer": ""
+              }
+            ]
+          }
+        }
+      ],
+      "Heste": [
+        {
+          "id": 11,
+          "type": "boolean",
+          "question": "Har du din egen en hest?",
+          "answer": "",
+          "conditional": {
+            "true": [
+              {
+                "id": 12,
+                "type": "boolean",
+                "question": "Skal den opstaldes på skolen?",
+                "answer": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

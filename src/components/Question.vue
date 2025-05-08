@@ -39,17 +39,17 @@ function handleConditional() {
 </script>
 
 <template>
-  <div>
+  <div class="question">
     <div v-if="props.question.type === 'text'">
       <label>{{ props.question.question }}</label>
-      <input type="text" v-model="props.question.answer" @input="handleConditional" />
+      <input type="text" class="form-control" v-model="props.question.answer" @input="handleConditional" />
     </div>
     <div v-if="props.question.type === 'number'">
       <label>{{ props.question.question }}</label>
-      <input type="number" v-model="props.question.answer" @input="handleConditional" />
+      <input type="number" class="form-control" v-model="props.question.answer" @input="handleConditional" />
     </div>
     <div v-if="props.question.type === 'boolean'">
-      <label>{{ props.question.question }}</label>
+      <label>{{ props.question.question }}</label>&nbsp;
       <input type="checkbox" v-model="props.question.answer" @change="handleConditional" />
     </div>
     <div v-if="props.question.type === 'checkbox'">
@@ -60,21 +60,19 @@ function handleConditional() {
     </div>
     <div v-if="props.question.type === 'select'">
       <label>{{ props.question.question }}</label>
-      <select v-model="props.question.answer" @change="handleConditional">
-        <option disabled value="">Please select one</option>
+      <select class="form-control" v-model="props.question.answer" @change="handleConditional">
+        <option disabled value="">Vælg venligst en</option>
         <option v-for="option in props.question.options" :key="option" :value="option">{{ option }}</option>
       </select>
     </div>
-
-    <!-- Recursively render conditional questions -->
-    <div v-if="conditionalQuestions.length">
+    <div class="condional" v-if="conditionalQuestions.length">
       <Question v-for="conditionalQuestion in conditionalQuestions" :key="conditionalQuestion.id" :question="conditionalQuestion" />
     </div>
   </div>
 </template>
 
 <style scoped>
-.question {
-  margin-bottom: 1em;
+.question,.condional {
+  margin-top: .5rem;
 }
 </style>
