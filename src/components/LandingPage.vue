@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import Spinner from './Spinner.vue';
-import * as School from '../types/school.ts';
+import * as School from '../types/School.ts';
 
 const props = defineProps({
     school: School

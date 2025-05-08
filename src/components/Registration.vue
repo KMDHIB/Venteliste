@@ -7,10 +7,10 @@ import SchoolInfo from './SchoolInfo.vue';
 import ContactInfo from './ContactInfo.vue';
 import Finalize from './Finalize.vue';
 import Questionnaire from './Questionnaire.vue';
-import { Child } from '../types/child.ts';
-import { School } from '../types/school.ts';
-import { PostalCode } from '../types/postalCode.ts';
-import { Registration } from '../types/registration.ts';
+import { Child } from '../types/Child.ts';
+import { School } from '../types/School.ts';
+import { PostalCode } from '../types/PostalCode.ts';
+import { Registration } from '../types/Registration.ts';
 
 interface Props {
   children: Child[],
