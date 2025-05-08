@@ -1,10 +1,10 @@
-const baseUrl = "src/assets/mock"; // Replace with your actual API base URL
+const baseUrl = "src/assets/mock";
 const headers = {
   "Content-Type": "application/json",
   "Accept": "*/*",
   "Cache-Control": "no-cache"
 };
-const cacheBuster = new Date().getTime(); // Cache buster to prevent caching issues
+const cacheBuster = new Date().getTime();
 
 export async function getChildren() {
   const response = await fetch(`${baseUrl}/children.json?v=${cacheBuster}`, {

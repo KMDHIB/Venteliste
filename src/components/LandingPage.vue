@@ -1,10 +1,10 @@
 <script setup>
 import { ref, onMounted, defineProps, defineEmits } from 'vue';
 import Spinner from './Spinner.vue';
-import * as School from '../interfaces/school.ts';
+import * as School from '../types/school.ts';
 
 const props = defineProps({
-  school: School
+    school: School
 });
 
 const emit = defineEmits(['loggingIn'])
@@ -15,23 +15,19 @@ const logIn = () => {
     emit('loggingIn', true);
 };
 
-onMounted(() => {
-    // setTimeout(() => {
-    //     loading.value = false;
-    // }, 1200);
-});
+onMounted(() => { });
 
 </script>
 
 <template>
     <div>
         <div v-if="loading">
-            <Spinner text="Henter data..."/>
+            <Spinner text="Henter data..." />
         </div>
         <div id="landing-page" v-if="!loading">
             <header>
                 <img :src="school?.ImageBase64" alt="Logo" class="logo">
-                
+
             </header>
             <section>
                 <a type="button" class="btn btn-primary" @click="logIn"><!---->

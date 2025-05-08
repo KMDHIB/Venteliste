@@ -52,7 +52,7 @@ onMounted(async () => {
     registration.value = registrationData;
     school.value = schoolData;
     siblings.value = siblingData;
-    questionnaire.value = questionnaireData;
+    questionnaire.value =  questionnaireData;
   } catch (error) {
     console.error('Error fetching data:', error);
   } finally {

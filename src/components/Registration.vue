@@ -7,10 +7,10 @@ import SchoolInfo from './SchoolInfo.vue';
 import ContactInfo from './ContactInfo.vue';
 import Finalize from './Finalize.vue';
 import Questionnaire from './Questionnaire.vue';
-import { Child } from '../interfaces/child.ts';
-import { School } from '../interfaces/school.ts';
-import { PostalCode } from '../interfaces/postalCode.ts';
-import { Registration } from '../interfaces/registration.ts';
+import { Child } from '../types/child.ts';
+import { School } from '../types/school.ts';
+import { PostalCode } from '../types/postalCode.ts';
+import { Registration } from '../types/registration.ts';
 
 interface Props {
   children: Child[],
@@ -23,16 +23,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
-// defineProps({
-//   children: Object,
-//   person: Object,
-//   postalCodes: Object,
-//   registration: Object,
-//   school: Object,
-//   siblings: Object,
-//   questionnaire: Object
-// })
 
 const emit = defineEmits(['done', 'loggingOut'])
 
@@ -81,38 +71,18 @@ const changeStep = (adder) => {
       step.value = 1;
     }
     else if (validateStep(step.value + adder)) {
-      /* Handle special case for optional questionnaire */
-      if (step.value == 2 && !(props.questionnaire.length > 0) && adder === 1) {
-        step.value = 4;
-      }
-      else {
-        step.value += adder;
-      }
-      
+      step.value += adder;
       setTimeout(() => window.scrollTo(0, 0), 400);
     }
   }
 };
 
 onMounted(() => {
-  if (props.questionnaire.length > 0) {
+  if (props.questionnaire?.length > 0) {
     steps.value.splice(2, 0, "Spørgeskema");
-  } 
-  
-  // setTimeout(() => {
-  //   console.log(questionnaire.value);
-  // }, 400);
- 
-});
+  }
 
-// watch(
-//   () => questionnaire.value,  
-//   (newVal) => {
-//     if (newVal) {
-//       console.log(newVal);
-//     }
-//   }
-// );
+});
 
 </script>
 
@@ -127,13 +97,13 @@ onMounted(() => {
       <SchoolInfo :registration="registration" :school="school" :siblings="siblings"
         :storedRegistration="registration" />
     </div>
-    <div v-show="step === 3">
+    <div v-show="step === 3 && (props.questionnaire?.length > 0)">
       <Questionnaire :questions="questionnaire" />
     </div>
-    <div v-show="step === 4">
+    <div v-show="step === ((props.questionnaire?.length > 0) ? 4 : 3)">
       <ContactInfo :registration="registration" :postalCodes="postalCodes" :gprLink="school?.GDPRConditionLink" />
     </div>
-    <div v-show="step === 5">
+    <div v-show="step === ((props.questionnaire?.length > 0) ? 5 : 4)">
       <Finalize :registration="registration" :school="school" />
     </div>
     <div class="row mb-3">
