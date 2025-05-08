@@ -3,6 +3,7 @@ import { ref } from 'vue'
 
 defineProps({
   text: String,
+  logo: String
 })
 
 </script>
@@ -10,7 +11,7 @@ defineProps({
 <template>
   <div class="spinner-box">
     <div class="spinner">
-      <img src="../assets/uvdata.svg" class="mrRotate" v-bind-alt="text" />
+      <img :src="logo ? logo : '/src/assets/icon.png'" class="mrRotate" v-bind-alt="text" />
       <span>{{ text }}</span>
     </div>
   </div>

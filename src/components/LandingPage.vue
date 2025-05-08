@@ -30,15 +30,9 @@ onMounted(() => { });
 
             </header>
             <section>
-                <a type="button" class="btn btn-primary" @click="logIn"><!---->
-                    <span>Opskriv
-                        dit
-                        barn
-                        <span>
-                            på {{ school?.Name }}
-                        </span>
-                        med
-                    </span>
+                <a type="button" class="btn btn-primary" @click="logIn">
+                    <span v-if="school?.WelcomeText">{{ school?.WelcomeText }}</span>
+                    <span v-if="!school?.WelcomeText">Opskriv dit barn <span>p&aring; {{ school?.Name }}</span> med</span>
                     &nbsp;
                     <img src="../assets/mitid-logo.png" alt="Login med MitID">
                 </a>
