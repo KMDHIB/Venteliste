@@ -22,7 +22,7 @@ const logOff = () => {
                 <h4>{{school?.Name}}</h4>
                 <p>
                     {{school?.Address}}<br/>
-                    {{school?.ZipCode}} {{school?.City}}<br/>
+                    {{school?.Zipcode}} {{school?.City}}<br/>
                     Tlf.: <a v-bind:href="'tel:' + school?.Phone">{{school?.Phone}}</a><br>
                     E-mail: <a v-bind:href="'mailto:' + school?.Email">{{school?.Email}}</a>
                 </p>

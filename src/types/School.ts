@@ -28,4 +28,4 @@ export interface School {
     ImageBase64: string;
     Styles: string;
     WelcomeText: string;
-}
+};

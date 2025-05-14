@@ -85,8 +85,7 @@ onMounted(() => {
 <template>
     <div>
         <div class="row well">
-            <h2>Opskrivning af {{ registration.Name.split(' ')[0] }} ({{ getAge(registration.BirthDay) }} &aring;r):
-            </h2>
+            <h2>Opskrivning af {{ registration.Name }}: </h2>
             <div class="row innerRow">
                 <div class="col-md-6">
                     <label>&Oslash;nsket &aring;r for skolestart</label>

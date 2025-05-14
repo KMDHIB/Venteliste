@@ -27,7 +27,7 @@ const props = defineProps<Props>();
 const emit = defineEmits(['done', 'loggingOut'])
 
 const step = ref(1);
-const steps = ref(["Vælg barn", "Opskrivning", "Kontaktpersoner", "Godkend"]);
+const steps = ref(["Vælg barn", "Opskrivning", "Kontaktinformation", "Godkend"]);
 const loadingNextStep = ref(false);
 const errorText = ref(null);
 const done = ref(false);

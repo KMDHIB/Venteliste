@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "type": "select",
+    "question": "Hvilket klassetrin ønsker du?",
+    "options": ["8. kl.", "9. kl.", "10. kl."],
+    "answer": "",
+    "conditional": {
+      "10. kl.": [
+        {
+          "id": 2,
+          "type": "boolean",
+          "question": "Ønsker du et karakter- og eksamensfrit skoleår?",
+          "answer": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "type": "number",
+    "question": "Startår",
+    "answer": null,
+    "conditional": {
+      "2025": [
+        {
+          "id": 4,
+          "type": "boolean",
+          "question": "Har du været til rundvisning?",
+          "answer": ""
+        }
+      ],
+      "2026": [
+        {
+          "id": 6,
+          "type": "boolean",
+          "question": "Kommer du til rundvisning i september 2025?",
+          "answer": ""
+        }
+      ],
+      "2027": [
+        {
+          "id": 7,
+          "type": "boolean",
+          "question": "Kommer du til rundvisning i september 2026?",
+          "answer": ""
+        }
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "type": "checkbox",
+    "question": "Hvilken linie ønsker du?",
+    "options": ["Fodbold", "Heste", "Gaming"],
+    "answer": [],
+    "conditional": {
+      "Fodbold": [
+        {
+          "id": 9,
+          "type": "select",
+          "question": "Hvilket position spille  du?",
+          "options": [
+            "Målmand",
+            "Sweeper",
+            "Libero",
+            "Forsvarsspiller",
+            "Full Back",
+            "Half Back",
+            "Midtbanespiller",
+            "Wing",
+            "Secondary Striker",
+            "Angriber"
+          ],
+          "answer": "",
+          "conditional": {
+            "Angriber": [
+              {
+                "id": 10,
+                "type": "number",
+                "question": "Hvor mange mål scorede du i sidste sæson?",
+                "answer": ""
+              }
+            ]
+          }
+        }
+      ],
+      "Heste": [
+        {
+          "id": 11,
+          "type": "boolean",
+          "question": "Har du din egen en hest?",
+          "answer": "",
+          "conditional": {
+            "true": [
+              {
+                "id": 12,
+                "type": "boolean",
+                "question": "Skal den opstaldes på skolen?",
+                "answer": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

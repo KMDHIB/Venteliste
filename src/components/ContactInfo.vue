@@ -103,6 +103,26 @@ onMounted(() => {
             <strong><a v-bind:href="gprLink" target="_blank"><span>L&aelig;s mere her om hvordan skolen behandler
                         personoplysninger</span></a></strong>
         </p>
+        <div v-if="!IsPrivateOrFreeSchool" class="row well">
+            <h2>Kontaktinformationer på eleven</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Navn</label>
+                    <input class="form-control" type="text" v-bind:disabled="true" v-model="registration.Name" />
+                </div>
+                <div class="col-sm-6">
+                    <label>Email</label>
+                    <input class="form-control" maxlength="50" type="text" v-model="registration.Email"
+                        v-bind:class="false ? 'is-invalid' : 'is-valid'" />
+
+                </div>
+                <div class="col-sm-6">
+                    <label>Mobil</label>
+                    <input class="form-control" maxlength="17" type="text" v-model="registration.Phone"
+                        v-bind:class="false ? 'is-invalid' : 'is-valid'" />
+                </div>
+            </div>
+        </div>
         <div class="row well">
             <h2>Voksne p&aring; barnets folkeregisteradresse</h2>
             <div class="row">

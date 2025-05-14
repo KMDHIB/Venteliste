@@ -4,6 +4,7 @@ import { onMounted, ref } from 'vue'
 import Registration from './components/Registration.vue';
 import Spinner from './components/Spinner.vue';
 import Receipt from './components/Receipt.vue';
+import Consent from './components/Consent.vue';
 import * as DataService from './functions/DataService.ts';
 import * as Helpers from './functions/Helpers.ts';
 
@@ -36,13 +37,19 @@ const handleDone = () => {
   }, 400);
 }
 
-onMounted(async () => {
-  const consentGiven = Helpers.getData("consent", false);
-  if (consentGiven) {
-    consent.value = true;
-  } else {
-    consent.value = false;
-  }
+const handleConsent = (choice) => {
+  loading.value = true;
+  setTimeout(() => {
+    Helpers.storeData("consent", choice, false);
+    done.value = false;
+    loggedIn.value = choice;
+    consent.value = choice;
+    loading.value = false;
+  }, 400);
+};
+
+onMounted(async () => {  
+  consent.value = Helpers.getData("consent", false) === true;
 
   try {
     const [childrenData, personData, postalCodeData, registrationData, schoolData, siblingData, questionnaireData] = await Promise.all([
@@ -62,6 +69,7 @@ onMounted(async () => {
     school.value = schoolData;
     siblings.value = siblingData;
     questionnaire.value = questionnaireData;
+    
     if (school.value?.Styles) {
       Helpers.addStyleSheet(school.value.Styles);
     }
@@ -77,10 +85,11 @@ onMounted(async () => {
 <template>
   <spinner v-if="loading" text="Henter data..." :logo="school?.ImageBase64 ? school.ImageBase64 : null"></spinner>
   <LandingPage v-if="!loading && !loggedIn && !done" :school="school" @loggingIn="handleLogin" />
-  <Registration v-if="!loading && loggedIn && !done" :children="children" :person="person" :postalCodes="postalCodes"
+  <Consent v-if="!loading && loggedIn && !consent" :school="school" @consentHandled="handleConsent" />
+  <Registration v-if="!loading && loggedIn && consent && !done" :children="children" :person="person" :postalCodes="postalCodes"
     :registration="registration" :school="school" :siblings="siblings" :questionnaire="questionnaire"
     @loggingOut="handleLogin" @done="handleDone" />
-  <Receipt v-if="!loading && loggedIn && done" :registration="registration" :school="school"
+  <Receipt v-if="!loading && loggedIn && consent && done" :registration="registration" :school="school"
     @loggingOut="handleLogin" />
 </template>
 

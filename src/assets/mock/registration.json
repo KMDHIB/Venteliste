@@ -1,7 +1,7 @@
 {
   "Id": 0,
   "Name": "William Rystespyd",
-  "BirthDay": "2009-10-08T00:00:00",
+  "BirthDay": "2012-02-15T00:00:00",
   "SchoolStart": "2024/2025",
   "SchoolClass": 9,
   "NumberOfSchoolYears": 0,
@@ -51,5 +51,7 @@
     "Notify": false,
     "HasValidCpr": false
   },
-  "IsLocked": false
+  "IsLocked": false,
+  "Phone": null,
+  "Email": null
 }
