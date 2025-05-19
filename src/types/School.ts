@@ -18,7 +18,7 @@ export interface School {
         Selected: boolean;
     }[];
     ClosedClasses: any[];
-    ExtraInfo: string;
+    SubHeading: string;
     Name: string;
     Address: string;
     Zipcode: string;

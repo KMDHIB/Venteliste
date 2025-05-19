@@ -32,9 +32,9 @@ const logOff = () => {
                     <h1 v-if="!school.WelcomeText && !isUpdate">Opskriv barn p&aring; {{school?.Name}}</h1>
                     <h1 v-if="!school.WelcomeText && isUpdate">Opdat&eacute;r barn p&aring; {{school?.Name}}</h1>
                     <h1 v-if="school.WelcomeText">{{school.WelcomeText}}</h1>
-                    <p v-if="!school.ExtraInfo && !isUpdate">Udfyld nedenst&aring;ende formular for opskrivning af dit barn</p>
-                    <p v-if="!school.ExtraInfo && isUpdate">Opdat&eacute;r hvis nedenst&aring;ende informationer har &aelig;ndret sig.</p>
-                    <p v-if="school.ExtraInfo">{{school.ExtraInfo}}</p>
+                    <p v-if="!school.SubHeading && !isUpdate">Udfyld nedenst&aring;ende formular for opskrivning af dit barn</p>
+                    <p v-if="!school.SubHeading && isUpdate">Opdat&eacute;r hvis nedenst&aring;ende informationer har &aelig;ndret sig.</p>
+                    <p v-if="school.SubHeading">{{school.SubHeading}}</p>
                 </div>
             </div>
             <div class="logoutContainer">

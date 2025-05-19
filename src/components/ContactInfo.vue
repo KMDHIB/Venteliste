@@ -5,7 +5,8 @@ import * as Helpers from '../functions/Helpers.js'
 defineProps({
     registration: Object,
     postalCodes: Array,
-    gprLink: String
+    gprLink: String,
+    useStudentInfo: Boolean
 })
 
 const isValid = () => {
@@ -103,7 +104,7 @@ onMounted(() => {
             <strong><a v-bind:href="gprLink" target="_blank"><span>L&aelig;s mere her om hvordan skolen behandler
                         personoplysninger</span></a></strong>
         </p>
-        <div v-if="!IsPrivateOrFreeSchool" class="row well">
+        <div v-if="useStudentInfo" class="row well">
             <h2>Kontaktinformationer på eleven</h2>
             <div class="row">
                 <div class="col-sm-6">

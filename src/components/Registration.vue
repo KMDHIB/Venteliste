@@ -101,7 +101,7 @@ onMounted(() => {
       <Questionnaire :questions="questionnaire" />
     </div>
     <div v-show="step === ((props.questionnaire?.length > 0) ? 4 : 3)">
-      <ContactInfo :registration="registration" :postalCodes="postalCodes" :gprLink="school?.GDPRConditionLink" />
+      <ContactInfo :registration="registration" :postalCodes="postalCodes" :gprLink="school?.GDPRConditionLink" :useStudentInfo="!school?.IsPrivateOrFreeSchool" />
     </div>
     <div v-show="step === ((props.questionnaire?.length > 0) ? 5 : 4)">
       <Finalize :registration="registration" :school="school" />
@@ -117,10 +117,10 @@ onMounted(() => {
         <span>
           <button type="button" class="btn btn-primary" v-bind:disabled="!validateStep(step) || loadingNextStep"
             @click="changeStep(1)">
-            <span v-if="step !== 4">Forts&aelig;t</span>
-            <span v-if="step === 4 && school?.UseEnrollmentFee && registration?.PaymentDue">Godkend og g&aring; til
+            <span v-if="step !== (steps?.length)">Forts&aelig;t</span>
+            <span v-if="step === (steps?.length) && school?.UseEnrollmentFee && registration?.PaymentDue">Godkend og g&aring; til
               betaling</span>
-            <span v-if="step === 4 && !(school?.UseEnrollmentFee && registration?.PaymentDue)">Godkend</span>
+            <span v-if="step === (steps?.length) && !(school?.UseEnrollmentFee && registration?.PaymentDue)">Godkend</span>
             <span v-if="loadingNextStep">
               &nbsp;
             </span>

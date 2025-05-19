@@ -265,7 +265,7 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <div v-show="school.SpecialFields?.length > 0" class="row well">
+        <div v-show="(school.SpecialFields?.length > 0) || (school.ExtraInformation?.length > 0)" class="row well">
             <h2>Ekstra oplysninger:</h2>
             <div v-for="specialField in school.SpecialFields">
                 <label>
@@ -274,6 +274,22 @@ onMounted(() => {
                     {{ specialField.Name }}
                 </label>
                 <br />
+            </div>
+            <div v-for="extraInfo in school.ExtraInformation">
+                <label>
+                    <span v-if="extraInfo.Type.toLowerCase() === 'checkbox'">
+                        <input type="checkbox" v-model="extraInfo.Value" v-on:change="() => setSpecialFields()" />
+                        &nbsp;
+                    </span>
+                    {{ extraInfo.Text }}
+                </label>
+                <textarea v-if="extraInfo.Type.toLowerCase() === 'textarea'" class="form-control" cols="50"
+                    maxlength="100" rows="3" v-model="extraInfo.Value"></textarea>
+                <span>
+                    &nbsp;
+                    <input  v-if="extraInfo.Type.toLowerCase() !== 'checkbox' && extraInfo.Type.toLowerCase() !== 'textarea'" :type="extraInfo.Type" maxlength="100" v-model="extraInfo.Value" />
+                </span>                
+                <br v-if="extraInfo.Type.toLowerCase() !== 'textarea'" />
             </div>
         </div>
         <div class="position-fixed top-0 end-0 p-3 z-1">

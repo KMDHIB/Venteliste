@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "type": "select",
+    "question": "Var det fedt i Østtyskland?",
+    "options": ["Ja", "Nej"],
+    "answer": "",
+    "conditional": {
+      "Ja": [
+        {
+          "id": 2,
+          "type": "select",
+          "question": "Vælg hold?",
+          "options": ["Politisk Komissær", "Obersturmbannerführer", "Sehr Gut Kammerat!"],
+          "answer": ""
+        }
+      ],
+      "Nej": [
+        {
+          "id": 3,
+          "type": "select",
+          "question": "Har du eller din familie prøvet af være i Gulag?",
+          "options": ["Ja", "Nej"],
+          "answer": "",
+          "conditional": {
+            "Ja": [
+              {
+                "id": 4,
+                "type": "select",
+                "options": ["Ja", "Nej"],
+                "question": "Har du lyst til at prøve det?",
+                "answer": "",
+                "conditional": {
+                  "Ja": [
+                    {
+                      "id": 5,
+                      "type": "select",
+                      "question": "Vælg hold?",
+                      "options": ["Genopdragelse", "Arbejdslejr", "Fangelejr"],
+                      "answer": ""
+                    }
+                  ],
+                  "Nej": [
+                    {
+                      "id": 6,
+                      "type": "select",
+                      "question": "Vælg hold?",
+                      "options": ["Kanonføde", "Kaninføde"],
+                      "answer": ""
+                    }
+                  ]
+                }
+              }
+            ],
+            "Nej": [
+              {
+                "id": 7,
+                "type": "select",
+                "question": "Vælg hold?",
+                "options": ["Genopdragelse", "Arbejdslejr", "Fangelejr"],
+                "answer": ""
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
