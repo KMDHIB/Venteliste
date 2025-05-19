@@ -198,7 +198,7 @@ onMounted(() => {
                 </p> -->
             </div>
         </div>
-        <div v-if="school?.KindergartenText" class="row well">
+        <div v-if="school?.KindergartenText && getAge(registration?.BirthDay) < 8" class="row well">
             <h2>{{ school?.KindergartenText }}:</h2>
             <div class="row">
                 <div class="col-md-12">
@@ -233,7 +233,7 @@ onMounted(() => {
                 </div>
             </div>
         </div>
-        <div class="row well">
+        <div v-if="false" class="row well">
             <h2>S&oslash;skende:</h2>
             <p v-if="!((siblings?.length + registration?.Siblings?.length) > 0)" class="fw-bold">Der er blev ikke fundet
                 s&oslash;skende p&aring; adressen.</p>

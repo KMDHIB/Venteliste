@@ -125,7 +125,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="row well">
-            <h2>Voksne p&aring; barnets folkeregisteradresse</h2>
+            <h2>Dine kontaktoplysninger</h2>
             <div class="row">
                 <div class="col-sm-6">
                     <label>Navn</label>
@@ -174,7 +174,9 @@ onMounted(() => {
                     </label>
                 </div>
             </div>
-            <br />
+        </div>
+        <div class="row well">
+            <h2>Kontaktoplysninger på anden forælder</h2>
             <div class="row">
                 <div class="col-sm-6">
                     <label>Navn</label>
@@ -230,7 +232,7 @@ onMounted(() => {
         </div>
         <br />
         <div class="row well">
-            <h2>For&aelig;lder eller kontaktperson bosiddende p&aring; anden adresse end barnets</h2>
+            <h2>Evt. anden kontaktperson</h2>
             <div class="row">
                 <div class="col-sm-6">
                     <label>Navn</label>

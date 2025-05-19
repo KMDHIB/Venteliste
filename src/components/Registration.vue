@@ -51,7 +51,6 @@ const changeChild = (child) => {
 
 };
 
-
 const validateStep = (step) => {
   return true;
 };
