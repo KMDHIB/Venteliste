@@ -287,8 +287,8 @@ onMounted(() => {
                     maxlength="100" rows="3" v-model="extraInfo.Value"></textarea>
                 <span>
                     &nbsp;
-                    <input  v-if="extraInfo.Type.toLowerCase() !== 'checkbox' && extraInfo.Type.toLowerCase() !== 'textarea'" :type="extraInfo.Type" maxlength="100" v-model="extraInfo.Value" />
-                </span>                
+                    <input v-if="extraInfo.Type.toLowerCase() !== 'checkbox' && extraInfo.Type.toLowerCase() !== 'textarea'" :type="extraInfo.Type" maxlength="100" v-model="extraInfo.Value" />
+                </span>
                 <br v-if="extraInfo.Type.toLowerCase() !== 'textarea'" />
             </div>
         </div>
