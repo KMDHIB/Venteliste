@@ -23,7 +23,7 @@
           "options": ["Ja", "Nej"],
           "answer": "",
           "conditional": {
-            "Ja": [
+            "Nej": [
               {
                 "id": 4,
                 "type": "select",
@@ -52,7 +52,7 @@
                 }
               }
             ],
-            "Nej": [
+            "Ja": [
               {
                 "id": 7,
                 "type": "select",
