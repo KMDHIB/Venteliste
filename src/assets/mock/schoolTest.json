@@ -62,7 +62,7 @@
       "Required": false,
       "Value": ""
     },
-       {
+    {
       "Text": "Må skolen kontakte klasselæreren?",
       "Type": "checkbox",
       "Required": false,
@@ -73,7 +73,7 @@
       "Type": "number",
       "Required": false,
       "Value": 0
-    }, 
+    },
     {
       "Text": "Andre bemærkninger?",
       "Type": "textarea",
