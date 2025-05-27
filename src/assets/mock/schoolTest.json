@@ -54,5 +54,31 @@
   "Email": "nomail@uvdata.net",
   "ImageBase64": "/src/assets/uvdata.svg",
   "Styles": "",
-  "WelcomeText": ""
+  "WelcomeText": "",
+  "ExtraInformation": [
+    {
+      "Text": "Navn på nuværende klasselærer?",
+      "Type": "text",
+      "Required": false,
+      "Value": ""
+    },
+       {
+      "Text": "Må skolen kontakte klasselæreren?",
+      "Type": "checkbox",
+      "Required": false,
+      "Value": true
+    },
+    {
+      "Text": "Hvor mange sprog taler barnet?",
+      "Type": "number",
+      "Required": false,
+      "Value": 0
+    }, 
+    {
+      "Text": "Andre bemærkninger?",
+      "Type": "textarea",
+      "Required": false,
+      "Value": ""
+    }
+  ]
 }

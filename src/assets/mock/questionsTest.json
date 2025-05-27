@@ -104,5 +104,21 @@
         }
       ]
     }
+  },
+    {
+    "id": 13,
+    "type": "boolean",
+    "question": "Har du allergier som skole skal være opmærksom på?",
+    "answer": "",
+    "conditional": {
+      "true": [
+        {
+          "id": 14,
+          "type": "text",
+          "question": "Hvilke?",
+          "answer": ""
+        }
+      ]
+    }
   }
 ]

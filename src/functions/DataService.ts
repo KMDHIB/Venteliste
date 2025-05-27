@@ -5,6 +5,7 @@ const headers = {
   "Cache-Control": "no-cache"
 };
 const cacheBuster = new Date().getTime();
+const school = "Test";
 
 export async function getChildren() {
   const response = await fetch(`${baseUrl}/children.json?v=${cacheBuster}`, {
@@ -20,7 +21,7 @@ export async function getChildren() {
 }
 
 export async function getSchool() {
-  const response = await fetch(`${baseUrl}/school.json?v=${cacheBuster}`, {
+  const response = await fetch(`${baseUrl}/school${school}.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
@@ -98,7 +99,7 @@ export async function getSiblings() {
 }
 
 export async function getQuestionnaire() {
-  const response = await fetch(`${baseUrl}/questions.json?v=${cacheBuster}`, {
+  const response = await fetch(`${baseUrl}/questions${school}.json?v=${cacheBuster}`, {
     method: "GET",
     headers: headers,
   });
