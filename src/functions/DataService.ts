@@ -5,7 +5,7 @@ const headers = {
   "Cache-Control": "no-cache"
 };
 const cacheBuster = new Date().getTime();
-const school = "Test";
+const school = "Primat";
 
 export async function getChildren() {
   const response = await fetch(`${baseUrl}/children.json?v=${cacheBuster}`, {
